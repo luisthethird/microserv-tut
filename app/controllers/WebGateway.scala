@@ -17,11 +17,14 @@ class WebGateway @Inject() (ws: WSClient) extends Controller {
   def accountRegistration() = Action.async {
 
     import play.api.libs.json._
+
     val data = Json.obj(
-      "key1" -> "value1",
-      "key2" -> "value2"
+      "id" -> 1234,
+      "name" -> "Pedro the Producer",
+      "region" -> "Ethiopia"
     )
-    ws.url("http://localhost:9000/message/echo").post(data).map {
+
+    ws.url("http://localhost:9001/account").post(data).map {
       response =>
         Ok(response.json)
     }
