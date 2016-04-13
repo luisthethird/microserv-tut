@@ -21,7 +21,7 @@ class WebGateway @Inject() (ws: WSClient) extends Controller {
       "key1" -> "value1",
       "key2" -> "value2"
     )
-    ws.url("localhost:9001").post(data).map {
+    ws.url("http://localhost:9001").post(data).map {
       response =>
         Ok(response.json)
     }
