@@ -14,3 +14,4 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 # Gateway routing
 GET    /account        controllers.WebGateway.accountRegistration()
+POST    /message/echo        controllers.WebGateway.echoService()
