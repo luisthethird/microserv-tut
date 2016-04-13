@@ -22,9 +22,6 @@ object WebGateway {
       "region" -> "Ethiopia"
     )
 
-
-    val futureResponse: Future[WSResponse] = ws.url(url).post(data)
-
   }
 
 
