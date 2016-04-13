@@ -6,7 +6,7 @@ case class ShippingInfo()
 
 case class Inventory()
 
-case class Account()
+case class Account(id: String, name: String, region: String)
 
 case class Product()
 
