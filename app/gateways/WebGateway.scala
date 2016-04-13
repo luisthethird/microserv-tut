@@ -1,6 +1,7 @@
 package gateways
 
 import models._
+import play.api.libs.json._
 import services.{AccountService, InventoryService, PurchaseService}
 
 /**
@@ -14,8 +15,18 @@ object WebGateway {
   def getAvailableInventory() =
     InventoryService.getInventory()
 
-  def registerAccount(account: Account) =
-    AccountService.register(account)
+  def registerAccount(account: Account) = {
+    // AccountService.register(account)
+    Json.obj(
+      "name" -> "Pepe the Farmer" ,
+      "region" -> "Ethiopia"
+    )
+
+
+    val futureResponse: Future[WSResponse] = ws.url(url).post(data)
+
+  }
+
 
   def addProduct(p: Product) = ???
 
