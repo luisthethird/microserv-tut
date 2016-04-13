@@ -4,11 +4,14 @@ import javax.inject.Inject
 
 import play.api.libs.ws.WSClient
 import play.api.mvc.Controller
+import scala.concurrent.{ExecutionContext, Future, Promise}
 
 /**
   * Created by jaimes on 4/13/16.
   */
 class WebGateway @Inject() (ws: WSClient) extends Controller {
+
+  import play.api.libs.concurrent.Execution.Implicits._
 
   def accountRegistration() = {
 
